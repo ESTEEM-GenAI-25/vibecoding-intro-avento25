@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alex Vento — ESTEEM @ Notre Dame</title>
+  <meta name="description" content="Personal website for an ESTEEM master's student at the University of Notre Dame. Projects, experience, and contact." />
+  <meta name="theme-color" content="#0b7285" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230b7285'/%3E%3Ctext x='50%25' y='54%25' font-size='28' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'%3EAV%3C/text%3E%3C/svg%3E" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Alex Vento — ESTEEM @ Notre Dame" />
+  <meta property="og:description" content="Projects, experience, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root {
+      --bg: #0b0c0f;
+      --surface: #111317;
+      --elev: #171a20;
+      --text: #e6e8eb;
+      --muted: #a4acb9;
+      --brand: #0b7285; /* teal */
+      --brand-2: #15aabf; /* lighter teal */
+      --ring: rgba(21, 170, 191, 0.35);
+      --ok: #2fb344;
+      --warn: #f08c00;
+      --danger: #d9480f;
+      --shadow: 0 10px 30px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.4);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --radius-lg: 28px;
+      --maxw: 1080px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f8fa;
+        --surface: #ffffff;
+        --elev: #ffffff;
+        --text: #0d1b2a;
+        --muted: #4a5568;
+        --ring: rgba(11, 114, 133, .2);
+        --shadow: 0 10px 30px rgba(10,30,60,.1), 0 2px 6px rgba(10,30,60,.05);
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1000px 600px at 10% -10%, rgba(21,170,191,.08), transparent 60%),
+                  radial-gradient(1000px 600px at 110% 10%, rgba(11,114,133,.08), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--brand-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(100% - 2rem, var(--maxw)); margin-inline: auto; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: saturate(1.2) blur(10px);
+      background: color-mix(in oklab, var(--bg), transparent 35%);
+      border-bottom: 1px solid color-mix(in oklab, var(--text), transparent 92%);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: .85rem 0;
+    }
+    .brand { display: flex; align-items: center; gap: .75rem; font-weight: 700; letter-spacing: .2px; }
+    .brand .logo { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: white; font-weight: 800; box-shadow: var(--shadow); }
+    .nav a { color: var(--text); opacity: .85; }
+    .nav a:hover { opacity: 1; text-decoration: none; }
+    .nav-links { display: flex; gap: 1.1rem; align-items: center; }
+
+    /* Hero */
+    .hero { padding: 6rem 0 3rem; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center; }
+    .hero h1 { font-size: clamp(2rem, 3.6vw + 1rem, 3.4rem); line-height: 1.1; margin: 0 0 .5rem; }
+    .hero p.lead { font-size: clamp(1rem, 1vw + .9rem, 1.25rem); color: var(--muted); margin: .25rem 0 1.4rem; }
+    .tag { display: inline-flex; align-items: center; gap: .5rem; padding: .4rem .7rem; background: var(--surface); border: 1px solid color-mix(in oklab, var(--text), transparent 88%); border-radius: 999px; font-size: .9rem; }
+    .cta { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.2rem; }
+    .btn { display: inline-flex; align-items: center; gap: .55rem; padding: .8rem 1rem; border-radius: 14px; font-weight: 600; border: 1px solid color-mix(in oklab, var(--text), transparent 85%); background: var(--surface); box-shadow: var(--shadow); }
+    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: white; border: none; }
+    .btn:hover { transform: translateY(-1px); }
+
+    .portrait { aspect-ratio: 1/1; width: min(340px, 90%); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); border: 1px solid color-mix(in oklab, var(--text), transparent 85%); margin: 0 auto; background: var(--surface); display: grid; place-items: center; }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Sections */
+    section { padding: 3.5rem 0; }
+    section h2 { font-size: clamp(1.25rem, 1.4vw + 1rem, 2rem); margin: 0 0 1.2rem; }
+    .card-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.2rem; }
+    .card { grid-column: span 12; background: var(--surface); border: 1px solid color-mix(in oklab, var(--text), transparent 88%); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.1rem; }
+    @media (min-width: 720px) {
+      .card.sm-6 { grid-column: span 6; }
+      .card.sm-4 { grid-column: span 4; }
+      .hero-grid { grid-template-columns: 1.1fr .9fr; }
+    }
+
+    .pill { display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .7rem; border-radius: 999px; background: color-mix(in oklab, var(--brand-2), transparent 87%); border: 1px solid color-mix(in oklab, var(--brand-2), transparent 70%); font-size: .85rem; }
+    .stack { display: flex; gap: .5rem; flex-wrap: wrap; }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 1rem; }
+    .timeline::before { content: ""; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: color-mix(in oklab, var(--text), transparent 85%); }
+    .titem { position: relative; margin: 0 0 1.3rem 0; padding-left: 1.6rem; }
+    .titem::before { content: ""; position: absolute; left: 2px; top: .3rem; width: 16px; height: 16px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand), transparent 70%); }
+    .titem h3 { margin: 0 0 .25rem; font-size: 1.05rem; }
+    .titem p { margin: 0; color: var(--muted); }
+
+    /* Footer */
+    footer { padding: 2rem 0 3rem; color: var(--muted); }
+    .footer-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; align-items: center; }
+    @media (min-width: 720px) { .footer-grid { grid-template-columns: 1fr auto; } }
+
+    /* Utilities */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .muted { color: var(--muted); }
+    .spacer { height: 1rem; }
+    .divider { height: 1px; background: color-mix(in oklab, var(--text), transparent 90%); margin: 1.5rem 0; }
+
+    /* Back-to-top button */
+    #backToTop { position: fixed; right: 1rem; bottom: 1rem; padding: .7rem .9rem; border-radius: 12px; border: 1px solid color-mix(in oklab, var(--text), transparent 85%); background: var(--surface); box-shadow: var(--shadow); display: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo" aria-hidden="true">AV</span> <span>Alex Vento</span></div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="tag" aria-label="Program tag">ESTEEM Master's — University of Notre Dame</span>
+          <h1>Hi, I'm Alex — building at the intersection of engineering and entrepreneurship.</h1>
+          <p class="lead">I'm a candidate in Notre Dame's <strong>ESTEEM Program</strong>, where I translate technical innovation into real-world ventures. I love product, AI-enabled tools, and human-centered engineering.</p>
+          <div class="cta">
+            <a class="btn primary" href="#projects">See my work</a>
+            <a class="btn" href="mailto:alex.vento@example.com" aria-label="Email Alex">Email me</a>
+            <a class="btn" href="#resume" aria-label="Jump to resume">Résumé</a>
+            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+        <div class="portrait" aria-label="Profile photo">
+          <!-- Replace with your own image -->
+          <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=800&auto=format&fit=crop" alt="Portrait placeholder" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <h2>About</h2>
+        <div class="card card-body">
+          <p>I'm a builder with a mechanical/electrical background who enjoys turning ambiguous problems into simple products. In ESTEEM, my focus includes <strong>AI productization</strong>, <strong>robotics</strong>, and <strong>optical systems</strong>. Previously, I've worked on automated filming systems for sports practices, glass manufacturing process analysis, and motor control projects.</p>
+          <div class="divider"></div>
+          <div class="stack" aria-label="Skills list">
+            <span class="pill">Python</span>
+            <span class="pill">C/C++</span>
+            <span class="pill">MATLAB</span>
+            <span class="pill">Embedded systems</span>
+            <span class="pill">Robotics</span>
+            <span class="pill">Computer vision</span>
+            <span class="pill">Product management</span>
+            <span class="pill">Figma</span>
+            <span class="pill">Data visualization</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <h2>Featured Projects</h2>
+        <div class="card-grid">
+          <article class="card sm-6">
+            <h3>Automated Sports Filming System</h3>
+            <p class="muted">PTZ-controlled multi-angle capture for football practice; custom control software with real-time operator assist.</p>
+            <div class="stack"><span class="pill">Python</span><span class="pill">OpenCV</span><span class="pill">gRPC</span></div>
+            <p><a href="#" aria-label="Read more about filming system">Read case study →</a></p>
+          </article>
+          <article class="card sm-6">
+            <h3>Robotics: Wheel Encoder Tracking</h3>
+            <p class="muted">Distance tracking with GoBilda 5204 Yellow Jacket motors and 96mm wheels, live OLED display.</p>
+            <div class="stack"><span class="pill">C++</span><span class="pill">Arduino</span><span class="pill">I2C</span></div>
+            <p><a href="#" aria-label="Read more about encoder tracking">Hardware notes →</a></p>
+          </article>
+          <article class="card sm-6">
+            <h3>Optical Metrology Surface Mapping</h3>
+            <p class="muted">3D XYZ surface data processing; on-surface slicing between arbitrary points for defect visualization.</p>
+            <div class="stack"><span class="pill">Python</span><span class="pill">NumPy</span><span class="pill">Plotly</span></div>
+            <p><a href="#" aria-label="Read more about metrology">See results →</a></p>
+          </article>
+          <article class="card sm-6">
+            <h3>Energy-Saving Window Coatings</h3>
+            <p class="muted">Business model analysis for applying selective coatings to float glass for improved thermal performance.</p>
+            <div class="stack"><span class="pill">Market research</span><span class="pill">Unit economics</span><span class="pill">BMC</span></div>
+            <p><a href="#" aria-label="Read more about window coatings">Summary deck →</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="card">
+          <div class="timeline">
+            <div class="titem">
+              <h3>Graduate Fellow — ESTEEM Program <span class="muted">(2025)</span></h3>
+              <p>Product experiments blending AI and robotics; client-facing technology commercialization projects.</p>
+            </div>
+            <div class="titem">
+              <h3>Engineering Intern — Robotics / CV <span class="muted">(2024)</span></h3>
+              <p>Built CV pipelines, telemetry dashboards, and control firmware for prototyping autonomous features.</p>
+            </div>
+            <div class="titem">
+              <h3>Undergraduate Researcher — Mechatronics <span class="muted">(2023)</span></h3>
+              <p>Designed sensor fusion stack for odometry; authored documentation and lab demos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <div class="container">
+        <h2>Education</h2>
+        <div class="card-grid">
+          <div class="card sm-6">
+            <h3>University of Notre Dame — ESTEEM</h3>
+            <p class="muted">M.S. in Engineering, Science & Technology Entrepreneurship</p>
+            <p>Focus: venture commercialization, product strategy, technical leadership.</p>
+          </div>
+          <div class="card sm-6">
+            <h3>Your Undergrad University</h3>
+            <p class="muted">B.S. in Your Engineering Discipline</p>
+            <p>Activities: Robotics club, design team, teaching assistant.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume">
+      <div class="container">
+        <h2>Résumé</h2>
+        <div class="card">
+          <p>Download a PDF version of my one-page résumé here:</p>
+          <p><a class="btn" href="./Alex_Vento_Resume.pdf" download>Download Résumé (PDF)</a></p>
+          <p class="muted">Place your PDF file in the same folder as this HTML file and name it <code>Alex_Vento_Resume.pdf</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="card">
+          <p>I'm open to collaborations, internships, and product conversations. The fastest way to reach me is email.</p>
+          <div class="cta">
+            <a class="btn primary" href="mailto:alex.vento@example.com">Email Alex</a>
+            <a class="btn" href="https://cal.com/" target="_blank" rel="noreferrer">Book time</a>
+            <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Alex Vento. Built with semantic HTML & CSS. Not affiliated with or endorsed by the University of Notre Dame.</p>
+      <a href="#top" id="backToTop" aria-label="Back to top">↑ Top</a>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Back to top visibility
+    const back = document.getElementById('backToTop');
+    const onScroll = () => {
+      back.style.display = window.scrollY > 600 ? 'inline-flex' : 'none';
+    };
+    window.addEventListener('scroll', onScroll);
+
+    // Simple in-page analytics (anonymous, local only)
+    const events = JSON.parse(localStorage.getItem('events')||'[]');
+    document.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        events.push({ href: a.getAttribute('href'), t: Date.now() });
+        localStorage.setItem('events', JSON.stringify(events));
+      });
+    });
+  </script>
+
+  <!-- JSON-LD Schema for Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alex Vento",
+    "jobTitle": "Graduate Student (ESTEEM)",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Notre Dame"
+    },
+    "email": "mailto:alex.vento@example.com",
+    "url": "https://example.com",
+    "sameAs": ["https://www.linkedin.com/", "https://github.com/"]
+  }
+  </script>
+</body>
+</html>
