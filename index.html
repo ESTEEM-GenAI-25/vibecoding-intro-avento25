@@ -87,8 +87,8 @@
     .btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: white; border: none; }
     .btn:hover { transform: translateY(-1px); }
 
-    .portrait { aspect-ratio: 1/1; width: min(340px, 90%); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); border: 1px solid color-mix(in oklab, var(--text), transparent 85%); margin: 0 auto; background: var(--surface); display: grid; place-items: center; }
-    .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .portrait { width: min(480px, 90%); border-radius: var(--radius-lg); box-shadow: var(--shadow); border: 1px solid color-mix(in oklab, var(--text), transparent 85%); margin: 0 auto; background: var(--surface); }
+    .portrait img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); }
 
     /* Sections */
     section { padding: 3.5rem 0; }
@@ -137,6 +137,7 @@
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
+        <a href="#interests">Hobbies</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -149,17 +150,16 @@
         <div>
           <span class="tag" aria-label="Program tag">ESTEEM Master's — University of Notre Dame</span>
           <h1>Hi, I'm Alex — building at the intersection of engineering and entrepreneurship.</h1>
-          <p class="lead">I'm a candidate in Notre Dame's <strong>ESTEEM Program</strong>, where I translate technical innovation into real-world ventures. I love product, AI-enabled tools, and human-centered engineering.</p>
+          <p class="lead">I'm a candidate in Notre Dame's <strong>ESTEEM Program</strong> (M.S. 2026, GPA 3.73) and recent Mechanical Engineering grad (B.S. 2025, GPA 3.39). I enjoy practical engineering, product thinking, and building systems that work in the real world.</p>
           <div class="cta">
             <a class="btn primary" href="#projects">See my work</a>
-            <a class="btn" href="mailto:alex.vento@example.com" aria-label="Email Alex">Email me</a>
+            <a class="btn" href="mailto:avento@nd.edu" aria-label="Email Alex">Email me</a>
             <a class="btn" href="#resume" aria-label="Jump to resume">Résumé</a>
             <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </div>
         <div class="portrait" aria-label="Profile photo">
-          <!-- Replace with your own image -->
-          <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=800&auto=format&fit=crop" alt="Portrait placeholder" />
+          <img src="./AVHeadshot.jpg" alt="Portrait of Alex Vento" />
         </div>
       </div>
     </section>
@@ -169,18 +169,20 @@
       <div class="container">
         <h2>About</h2>
         <div class="card card-body">
-          <p>I'm a builder with a mechanical/electrical background who enjoys turning ambiguous problems into simple products. In ESTEEM, my focus includes <strong>AI productization</strong>, <strong>robotics</strong>, and <strong>optical systems</strong>. Previously, I've worked on automated filming systems for sports practices, glass manufacturing process analysis, and motor control projects.</p>
+          <p>Mechanical Engineering B.S. (2025) and ESTEEM M.S. candidate (2026) at the University of Notre Dame. Hands-on experience across construction engineering, HVAC/wastewater system design, and project management. Interested in practical engineering, robotics, optical metrology, and applying technology to solve real problems.</p>
           <div class="divider"></div>
           <div class="stack" aria-label="Skills list">
-            <span class="pill">Python</span>
-            <span class="pill">C/C++</span>
             <span class="pill">MATLAB</span>
-            <span class="pill">Embedded systems</span>
-            <span class="pill">Robotics</span>
-            <span class="pill">Computer vision</span>
-            <span class="pill">Product management</span>
-            <span class="pill">Figma</span>
-            <span class="pill">Data visualization</span>
+            <span class="pill">Python</span>
+            <span class="pill">Excel</span>
+            <span class="pill">PowerPoint</span>
+            <span class="pill">SolidWorks CAD/CAM</span>
+            <span class="pill">Bluebeam Revu</span>
+            <span class="pill">Procore</span>
+            <span class="pill">CNC machining</span>
+            <span class="pill">AutoCAD</span>
+            <span class="pill">Carrier HAP</span>
+            <span class="pill">Optical Metrology</span>
           </div>
         </div>
       </div>
@@ -192,22 +194,16 @@
         <h2>Featured Projects</h2>
         <div class="card-grid">
           <article class="card sm-6">
-            <h3>Automated Sports Filming System</h3>
-            <p class="muted">PTZ-controlled multi-angle capture for football practice; custom control software with real-time operator assist.</p>
-            <div class="stack"><span class="pill">Python</span><span class="pill">OpenCV</span><span class="pill">gRPC</span></div>
-            <p><a href="#" aria-label="Read more about filming system">Read case study →</a></p>
+            <h3>Senior Design: Autonomous Build Robot</h3>
+            <p class="muted">Led electronics for a robot that navigated an obstacle course and autonomously placed blocks to construct a small house. Built the control stack across circuit design, sensor integration, software, and motor control; supported CAD and fabrication.</p>
+            <div class="stack"><span class="pill">Electronics</span><span class="pill">Sensor Integration</span><span class="pill">Motor Control</span><span class="pill">CAD</span></div>
+            <p><a href="#" aria-label="Read more about senior design robot">Project write-up →</a></p>
           </article>
           <article class="card sm-6">
-            <h3>Robotics: Wheel Encoder Tracking</h3>
-            <p class="muted">Distance tracking with GoBilda 5204 Yellow Jacket motors and 96mm wheels, live OLED display.</p>
-            <div class="stack"><span class="pill">C++</span><span class="pill">Arduino</span><span class="pill">I2C</span></div>
-            <p><a href="#" aria-label="Read more about encoder tracking">Hardware notes →</a></p>
-          </article>
-          <article class="card sm-6">
-            <h3>Optical Metrology Surface Mapping</h3>
-            <p class="muted">3D XYZ surface data processing; on-surface slicing between arbitrary points for defect visualization.</p>
-            <div class="stack"><span class="pill">Python</span><span class="pill">NumPy</span><span class="pill">Plotly</span></div>
-            <p><a href="#" aria-label="Read more about metrology">See results →</a></p>
+            <h3>Laser Micro‑Engraving Research</h3>
+            <p class="muted">Characterized a MOPA laser using optical metrology to map the process window and achieve micron‑scale engravings of the Notre Dame monogram. Tuned parameters, validated outcomes, and documented a repeatable method.</p>
+            <div class="stack"><span class="pill">Optical Metrology</span><span class="pill">MATLAB</span><span class="pill">MOPA Laser</span></div>
+            <p><a href="#" aria-label="Read more about laser research">Research summary →</a></p>
           </article>
           <article class="card sm-6">
             <h3>Energy-Saving Window Coatings</h3>
@@ -226,16 +222,16 @@
         <div class="card">
           <div class="timeline">
             <div class="titem">
-              <h3>Graduate Fellow — ESTEEM Program <span class="muted">(2025)</span></h3>
-              <p>Product experiments blending AI and robotics; client-facing technology commercialization projects.</p>
+              <h3>Engineer and Draftsman — Engineering Dynamics Corporation <span class="muted">(Jun–Aug 2024)</span></h3>
+              <p>Created and updated construction drawings for permitting; conducted site visits to document infrastructure; designed HVAC and wastewater systems using Carrier HAP per codes.</p>
             </div>
             <div class="titem">
-              <h3>Engineering Intern — Robotics / CV <span class="muted">(2024)</span></h3>
-              <p>Built CV pipelines, telemetry dashboards, and control firmware for prototyping autonomous features.</p>
+              <h3>Project Manager — ARCO/Murray National Construction <span class="muted">(Jun–Aug 2023)</span></h3>
+              <p>Supported subcontractor buyouts, RFIs, takeoffs, and closeout docs. Won first place in a capstone on integrating large language models into construction workflows.</p>
             </div>
             <div class="titem">
-              <h3>Undergraduate Researcher — Mechatronics <span class="muted">(2023)</span></h3>
-              <p>Designed sensor fusion stack for odometry; authored documentation and lab demos.</p>
+              <h3>Project Manager's Assistant — Dorvin D. Leis Co. <span class="muted">(Jun–Aug 2022)</span></h3>
+              <p>Handled takeoffs, RFIs, material acquisition, and TAB; designed a valve train to connect chilled water supply/return to fan coil units for the Kahului Airport renovation.</p>
             </div>
           </div>
         </div>
@@ -249,13 +245,13 @@
         <div class="card-grid">
           <div class="card sm-6">
             <h3>University of Notre Dame — ESTEEM</h3>
-            <p class="muted">M.S. in Engineering, Science & Technology Entrepreneurship</p>
-            <p>Focus: venture commercialization, product strategy, technical leadership.</p>
+            <p class="muted">M.S. in Engineering, Science & Technology Entrepreneurship • May 2026</p>
+            <p>GPA: 3.73</p>
           </div>
           <div class="card sm-6">
-            <h3>Your Undergrad University</h3>
-            <p class="muted">B.S. in Your Engineering Discipline</p>
-            <p>Activities: Robotics club, design team, teaching assistant.</p>
+            <h3>University of Notre Dame — Mechanical Engineering</h3>
+            <p class="muted">B.S. in Mechanical Engineering • May 2025</p>
+            <p>GPA: 3.39</p>
           </div>
         </div>
       </div>
@@ -267,8 +263,45 @@
         <h2>Résumé</h2>
         <div class="card">
           <p>Download a PDF version of my one-page résumé here:</p>
-          <p><a class="btn" href="./Alex_Vento_Resume.pdf" download>Download Résumé (PDF)</a></p>
-          <p class="muted">Place your PDF file in the same folder as this HTML file and name it <code>Alex_Vento_Resume.pdf</code>.</p>
+          <p><a class="btn" href="./Alex Vento Resume September 2025.pdf" download>Download Résumé (PDF)</a></p>
+          <p class="muted">The download links to your uploaded file in this folder. You can rename it anytime and update this link.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hobbies / Interests -->
+    <section id="interests">
+      <div class="container">
+        <h2>Hobbies & Interests</h2>
+        <div class="card-grid">
+          <div class="card sm-4">
+            <h3 style="display:flex;align-items:center;gap:.6rem">
+              <svg width="28" height="28" viewBox="0 0 28 28" aria-label="Diver down flag" role="img" style="border-radius:6px; box-shadow: var(--shadow)">
+                <rect width="28" height="28" fill="#d90429"/>
+                <polygon points="0,6 10,6 28,22 18,22" fill="#ffffff"/>
+              </svg>
+              Scuba Diving
+            </h3>
+            <p class="muted">I enjoy scuba diving, especially in my home waters of Maui, Hawaii. I'm a certified PADI Master Diver and Rescue Diver.</p>
+          </div>
+          <div class="card sm-4">
+            <h3 style="display:flex;align-items:center;gap:.6rem">
+              <svg width="26" height="26" viewBox="0 0 24 24" role="img" aria-label="Cooking icon">
+                <circle cx="9" cy="12" r="5" fill="currentColor" opacity=".15"/>
+                <circle cx="9" cy="12" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <rect x="14" y="10.8" width="7" height="2.4" rx="1.2" fill="currentColor"/>
+              </svg>
+              Cooking
+            </h3>
+            <p class="muted">I love cooking for friends and family—especially dishes that remind me of home and sharing those flavors with others.</p>
+          </div>
+          <div class="card sm-4">
+            <h3 style="display:flex;align-items:center;gap:.6rem">
+              <img src="./stealiecolor.png" alt="Grateful Dead stealie logo" width="26" height="26" style="border-radius:50%; box-shadow: var(--shadow)" />
+              Music
+            </h3>
+            <p class="muted">I have a deep appreciation for all forms of music. I especially like the Grateful Dead as each performance feels unique. For me, music is both a source of inspiration and a way to connect with others.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -280,7 +313,8 @@
         <div class="card">
           <p>I'm open to collaborations, internships, and product conversations. The fastest way to reach me is email.</p>
           <div class="cta">
-            <a class="btn primary" href="mailto:alex.vento@example.com">Email Alex</a>
+            <a class="btn primary" href="mailto:avento@nd.edu">Email Alex</a>
+            <a class="btn" href="tel:+13392262492" aria-label="Call Alex">Call (339) 226-2492</a>
             <a class="btn" href="https://cal.com/" target="_blank" rel="noreferrer">Book time</a>
             <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
           </div>
@@ -328,7 +362,8 @@
       "@type": "CollegeOrUniversity",
       "name": "University of Notre Dame"
     },
-    "email": "mailto:alex.vento@example.com",
+    "email": "mailto:avento@nd.edu",
+    "telephone": "+1-339-226-2492",
     "url": "https://example.com",
     "sameAs": ["https://www.linkedin.com/", "https://github.com/"]
   }

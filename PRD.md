@@ -1,73 +1,76 @@
 # 📑 Product Requirements Document (PRD)
 
-## 1. Project Overview
-- **Summary:**  
-  _One-sentence description of what this product is and why it exists._
+## 1\. Project Overview
 
-- **Context/Background:**  
-  _Why this project is being created, relevant history, or inspiration._
+* **Summary:**  
+  *This is a personal website for Alexander Vento a graduate student in the ESTEEM program at Notre Dame.*
+* <b>Context/Background:</b>  
+  *This project is being created to showcase portfolio elements and relevant experience concerning both Alex's work with the esteem program and his work as a mechanical engineering undergrad at the University of Notre Dame.* 
 
-## 2. Goals and Objectives
-- **Primary Goal(s):**  
-  _Main outcome the product should achieve._
+## 2\. Goals and Objectives
 
-- **Secondary Goal(s):**  
-  _Additional but less critical objectives._
+* **Primary Goal(s):**  
+  *The main goal is to create a personal website in order to present portfolio elements and experiences*
+* **Secondary Goal(s):**  
+  *Present unique personality elements of the student*
 
-## 3. Target Audience
-- **Who are the users?**  
-  _e.g., students, researchers, customers, collaborators, general public._
+## 3\. Target Audience
 
-- **User Needs:**  
-  _What they expect to accomplish using this product._
+* **Who are the users?**  
+  *Other students, Hiring managers , Industry professionals , general public.*
+* **User Needs:**  
+  *Learn more about Alexander Vento*
 
-## 4. Key Features / Requirements
-- **Must-Have Features:**  
-  - Feature 1  
-  - Feature 2  
-  - Feature 3  
+## 4\. Key Features / Requirements
 
-- **Nice-to-Have Features (Optional):**  
-  - Feature A  
-  - Feature B  
+* **Must-Have Features:**
 
-## 5. Design & User Experience
-- **Visual Style / Vibe:**  
-  _Minimalist, playful, professional, bold, etc._
+  * Home page with bio
+  * Portfolio tab including projects
 
-- **Branding / Colors / Fonts:**  
-  _Any specific guidelines or references._
+* **Nice-to-Have Features (Optional):**
 
-- **Accessibility Considerations:**  
-  _e.g., color contrast, alt text for images, screen reader compatibility._
+  * Hobbies/interests tab
 
-## 6. Content Requirements
-- **Pages / Sections:**  
-  - Homepage  
-  - About / Bio  
-  - Projects / Portfolio  
-  - Contact  
-  - _(other sections as needed)_  
+## 5\. Design \& User Experience
 
-- **Specific Content to Include:**  
-  _Copy, images, links, downloads, etc._
+* **Visual Style / Vibe:**  
+  *professional*
+* **Branding / Colors / Fonts:**  
+  *Emphasize Notre Dame student status*
+* **Accessibility Considerations:**  
+  *None*
 
-## 7. Technical Constraints
-- **Technology Stack:**  
-  _Plain HTML/CSS/JS, React, etc._
+## 6\. Content Requirements
 
-- **Hosting / Deployment:**  
-  _GitHub Pages, custom server, etc._
+* **Pages / Sections:**
 
-- **Performance / Security Requirements:**  
-  _e.g., mobile responsive, SSL, fast loading times._
+  * Homepage
+  * About / Bio
+  * Projects / Portfolio
+  * Contact
+  * 
 
-## 8. Out of Scope
-- _List what this product will **not** include, to prevent scope creep._
+* **Specific Content to Include:**  
 
-## 9. Acceptance Criteria
-- _How you’ll know the product is complete — measurable standards._  
-  - Loads in under X seconds  
-  - Mobile responsive on iOS/Android  
-  - All main features work as described  
-  - Accessibility checks passed  
+## 7\. Technical Constraints
+
+* **Technology Stack:**  
+  *Plain HTML/CSS/JS, React, etc.*
+* **Hosting / Deployment:**  
+  *GitHub Pages, custom server, etc.*
+* **Performance / Security Requirements:**  
+  *e.g., mobile responsive, SSL, fast loading times.*
+
+## 8\. Out of Scope
+
+* 
+
+## 9\. Acceptance Criteria
+
+* *How you’ll know the product is complete — measurable standards.*
+
+  * Loads in under 20 seconds
+  * Mobile responsive on iOS/Android
+  * All main features work as described
+  * Accessibility checks passed
